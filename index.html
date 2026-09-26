@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Encuentra tu amigo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="mascotas.html">🐾 Encuentra tu amigo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="mascotas.html">Mascotas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="perfil.html">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="mensajes.html">Mensajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="publicar.html">Publicar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="ingresar.html">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="registro.html">Registro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="registro">
+            <article>
+                <h2>REGISTRO</h2>
+                <form action="register.php" method="POST">
+                    <label for="new-username">Nombre completo:</label>
+                    <input type="text" id="new-username" name="new-username" placeholder="Juan Pérez" required>
+                    <br>
+                    <label for="new-email">Correo:</label>
+                    <input type="email" id="new-email" name="new-email" placeholder="juan@ejemplo.com" required>
+                    <br>
+                    <label for="new-phone">Teléfono:</label>
+                    <input type="tel" id="new-phone" name="new-phone" placeholder="123-456-7890" required>
+                    <br>
+                    <label for="cedula">Cédula:</label>
+                    <input type="text" id="cedula" name="cedula" placeholder="123456789" required>
+                    <br>
+                    <label for="Fecha de nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="Fecha de nacimiento" name="Fecha de nacimiento" placeholder="1990-01-01"
+                        required>
+                    <br>
+                    <label for="new-password">Contraseña:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <br>
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <button type="submit">Registrar</button>
+                </form>
+            </article>
+        </section>
+        <section id="Publicar">
+            <div id="publicar-Form">
+                <h2>PUBLICAR MASCOTA</h2>
+                <form action="publicarmascota.php" method="POST" enctype="multipart/form-data">
+                    <label for="nombre">Nombre de la mascota:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <br>
+                    <label for="historia">Breve historia de la mascota:</label>
+                    <textarea id="historia" name="historia" required></textarea>
+                    <br>
+                    <label for="especie">Especie:</label>
+                    <input type="text" id="especie" name="especie" required>
+                    <br>
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" required>
+                    <br>
+                    <label for="sexo">Sexo:</label>
+                    <select id="sexo" name="sexo" required>
+                        <option value="macho">Macho</option>
+                        <option value="hembra">Hembra</option>
+                    </select>
+                    <br>
+                    <label for="imagen">Imagen de la mascota:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                    <br>
+                    <button type="submit">Publicar</button>
+                </form>
+            </div>
+            <div id="Previsualizacion">
+                <h3>PREVISUALIZACIÓN</h3>
+                <div id="preview-container">
+                    <p>Nombre: <span id="preview-nombre"></span></p>
+                    <p>Historia: <span id="preview-historia"></span></p>
+                    <p>Especie: <span id="preview-especie"></span></p>
+                    <p>Edad: <span id="preview-edad"></span></p>
+                    <p>Sexo: <span id="preview-sexo"></span></p>
+                    <p>Fundación: <span id="preview-fundacion"></span></p>
+                </div>
+                <div id="imagen-previsualizacion"></div>
+                <div id="boton-previsualizacion">
+                    <button id="btn-previsualizar">Contactar</button>
+                </div>
+            </div>
+        </section>
+        <section id="buscar-mascota">
+            <div id="contenedor">
+                <div id="filtros">
+                    <h3>Filtrado por:</h3>
+                    <div id="filtro-especie">
+                        <label for="especie">Especie:</label>
+                        <select id="especie" name="especie">
+                            <option value="">Todas</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="conejo">Conejo</option>
+                        </select>
+                    </div>
+                    <div id="filtro-edad">
+                        <label for="edad">Edad:</label>
+                        <select id="edad" name="edad">
+                            <option value="">Todas</option>
+                            <option value="cachorro">Cachorro</option>
+                            <option value="adulto">Adulto</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </div>
+                    <div id="filtro-sexo">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" name="sexo">
+                            <option value="">Todos</option>
+                            <option value="macho">Macho</option>
+                            <option value="hembra">Hembra</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="resultados">
+                    <h3>Resultados de la búsqueda:</h3>
+                    <div id="resultados-tarjetas">
+                        <div id="tarjeta-1" class="tarjeta">
+                            <div id="informacion-mascota">
+                                <p>Nombre fundacion</p>
+                                <img src="perro1.jpg" alt="Perro 1">
+                                <h4>Nombre mascota</h4>
+                                <p>Sexo</p>
+                                <p>Edad</p>
+                                <p>Especie</p>
+                            </div>
+                            <div id="boton-conocer">
+                                <button>Conocer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-custom">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <p>&copy; 2026 Encuentra tu amigo. Todos los derechos reservados.</p>
+                </div>
+                <div class="col">
+                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link" href="#">Mascotas</a>
+                </div>
+                <div class="col">
+                    <a class="nav-link" href="#">Ingresar</a>
+                    <a class="nav-link" href="#">Registro</a>
+                    <a class="nav-link" href="#">Perfil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

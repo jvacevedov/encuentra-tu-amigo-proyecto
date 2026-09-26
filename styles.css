@@ -1,0 +1,101 @@
+:root {
+  --backgroundcolor: #FFF3ED;
+  --acentuacion: #FCC3AC;
+  --primario: #BE1819;
+  --colortextos: #420809;
+  --blanco: #FFFFFF;
+  --negro: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 56px;
+  background-color: var(--backgroundcolor);
+  font-family: 'Poppins', sans-serif;
+  color: var(--colortextos);
+}
+/* Navbar */
+.navbar {
+  background-color: var(--primario);
+}
+.navbar-brand {
+  color: var(--blanco);
+}
+
+/* footer */
+.footer-custom{
+    background-color: var(--primario);
+}
+
+/* imagenes */
+.imagen-80 {
+    width: 80%;
+    height: auto;
+    border-radius: 10%;
+}
+/* contenedores */
+.mi-contenedor {
+    background-color: var(--backgroundcolor);
+    padding: 20px;
+}
+.mi-contenedor-borde{
+    border-radius: 10px;
+    border: 1px solid var(--colortextos);
+}
+
+/* formularios */
+.input-linea {
+    background: transparent;      /* Elimina el fondo blanco */
+    border: none;                 /* Quita todos los bordes por defecto */
+    border-bottom: 1.5px solid var(--colortextos); /* Crea la línea continua inferior */
+    outline: none;                /* Quita el contorno azul al hacer clic */
+    padding: 5px 10px;
+    width: 100%;                  /* Ocupa todo el ancho disponible */
+    color: var(--colortextos);               /* Color del texto digitado */
+}
+/* quita el borde azul de enfoque en Bootstrap o navegadores */
+.input-linea:focus {
+    background: transparent;
+    border-bottom: 2px solid var(--colortextos); /* Cambia ligeramente al enfocar */
+    box-shadow: none;             /* Elimina el brillo azul de Bootstrap */
+    outline: none;
+}
+.mensaje-error {
+    color: #dc3545;           
+    font-size: 0.85rem;
+    display: block;
+    margin-top: -1rem;        
+    margin-bottom: 1rem;
+}
+/* links */
+#togglePassword {
+    cursor: pointer;
+}
+.link-bg-oscuro {
+  text-decoration: none;
+  color: var(--blanco);
+}
+.link-bg-oscuro:hover {
+  color: var(--acentuacion);
+}
+.link-bg-claro {
+  text-decoration: none;
+  color: var(--primario);
+}
+.link-bg-claro:hover {
+  color: var(--acentuacion);
+}
+/* Botones */
+.button-container {
+    margin: 15px; 
+    margin-top: 25px;
+}
+button {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
